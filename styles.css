@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+:root {
+  --jersey-primary: #183c88;
+  --jersey-secondary: #fac903;
+  --jersey-tertiary: #e3e5f1;
+  --balloon-color-1: #631886;
+  --ballon-color-2: #866318;
+  --ballon-color-3: #3B8618;
+  --background: #3F71DD;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+}
