@@ -1,0 +1,3 @@
+#!/usr/bin/bash
+
+dart-sass/sass scss:docs
