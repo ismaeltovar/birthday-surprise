@@ -1,4 +1,5 @@
 @use 'index';
+@use 'animations';
 
 .balloon {
   position: absolute;
@@ -7,6 +8,7 @@
   border-radius: 50%;
   width: 17em;
   height: 20em;
+  animation: fly-to-top 2s infinite;
 }
 
 $colors: ('purple': index.$purple-balloon, 'orange': index.$orange-balloon, 'green': index.$green-balloon);
@@ -15,9 +17,9 @@ $side: 'left'; //used to determine which side of balloons to work on
   @each $color-name, $color in $colors {
     //applies styling to each balloon
     .#{$color-name}-balloon-#{$side} {
-      @extend .balloon; 
+      @extend .balloon;
       background-color: $color;
-    } 
+    }
   }
 
   @if $side == 'left' {

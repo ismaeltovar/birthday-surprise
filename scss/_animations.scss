@@ -1,0 +1,23 @@
+@use 'index';
+@use 'sass:math';
+
+@keyframes swing-from-right {
+  from {right: -150%;} to {right: 0}
+}
+
+@keyframes fly-to-top {
+  from {bottom: -150%;} to {bottom: 100%;}
+}
+
+$percent: 0;
+@keyframes pop-up-text {
+  from {right: 0; bottom: 0;} to { bottom: 30%;}
+  @while $percent <= 10 {
+    #{$percent * 10%} {opacity: math.div($percent, 10); transform: scale(math.div($percent, 10)); }
+    $percent: $percent + .5;
+  }
+}
+
+@keyframes text-highlight {
+  from {color: index.$jsy-secondary;} to {color: index.$jsy-primary;}
+}
