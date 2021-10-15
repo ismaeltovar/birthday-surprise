@@ -1,0 +1,95 @@
+@use 'index';
+@use 'sass:math';
+
+.jersey {
+  position: absolute;
+  top: 20%;
+  right: 0;
+  left: 0;
+  background: index.$jsy-primary;
+  width: 22em;
+  height: 30em;
+  margin: .1em auto;
+}
+
+.yellow-stripe {
+  content: "";
+  position: absolute;
+  width: 1.5em;
+  height: 4em;
+  box-shadow: inset .2em .2em 0em .1em index.$jsy-secondary;
+  background: index.$shadow-color;
+  border-radius: 2em;
+}
+
+.white-stripe {
+  content: "";
+  position: absolute;
+  width: 1em;
+  height: 4em;
+  background: index.$jsy-tertiary;
+}
+
+/* For top stripes */
+.jsy-top-stripes {
+  width: inherit;
+  height: auto;
+  position: absolute;
+  top: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+.jsy-top-stripes::before {
+  @extend .yellow-stripe;
+  top: 0em;
+  left: 0em;
+}
+
+.jsy-top-stripes::after {
+  @extend .yellow-stripe;
+  top: 0em;
+  right: 0em;
+}
+
+/* For bottom stripes */
+.jsy-btm-stripes {
+  position: absolute;
+  bottom: 0em;
+  background: transparent;
+  overflow: hidden;
+}
+
+.jsy-btm-stripes::before {
+  @extend .white-stripe;
+  content: "";
+  background: index.$jsy-tertiary;
+  bottom: 0em;
+  left: .1em;
+}
+
+.jsy-btm-stripes::after {
+  @extend .white-stripe;
+  bottom: 0em;
+  right: .1em;
+}
+
+/* For text on jersey */
+.jsy-txt {
+  color: index.$jsy-secondary;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 800;
+}
+
+.jsy-name {
+  @extend .jsy-txt;
+  position: relative;
+  display: block;
+  font-size: 4em;
+}
+
+.jsy-num {
+  @extend .jsy-txt;
+  font-size: 7em;
+}
