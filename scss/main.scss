@@ -1,8 +1,15 @@
+@use 'index';
+
 /* Font import */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
 /* Partials import */
 
+html {
+  max-width: 100vw;
+  max-height: 100vh;
+}
+
 body {
-  background: $background-color;
+  background: index.$background-color;
 }
