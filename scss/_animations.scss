@@ -1,6 +1,10 @@
 @use 'index';
 @use 'sass:math';
 
+@keyframes hide-component {
+  from {visibility: visible;} to {visibility: hidden;}
+}
+
 @keyframes swing-from-right {
   from {right: -150%; visibility: visible;} to {right: 0; visibility: visible;}
 }
