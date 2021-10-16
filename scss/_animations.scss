@@ -2,16 +2,16 @@
 @use 'sass:math';
 
 @keyframes swing-from-right {
-  from {right: -150%;} to {right: 0}
+  from {right: -150%; visibility: visible;} to {right: 0; visibility: visible;}
 }
 
 @keyframes fly-to-top {
-  from {bottom: -150%;} to {bottom: 100%;}
+  from {bottom: -150%; visibility: visible;} to {bottom: 100%; visibility: visible;}
 }
 
 $percent: 0;
 @keyframes pop-up-text {
-  from {right: 0; bottom: 0;} to { bottom: 30%;}
+  from {right: 0; bottom: 0; visibility: visible;} to { bottom: 30%; visibility: visible;}
   @while $percent <= 10 {
     #{$percent * 10%} {opacity: math.div($percent, 10); transform: scale(math.div($percent, 10)); }
     $percent: $percent + .5;
