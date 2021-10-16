@@ -4,21 +4,28 @@
 .balloon {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 0;
+  right: 0;
+  margin: 0em auto;
   border-radius: 50%;
   width: 17em;
   height: 20em;
-  animation: fly-to-top 2s infinite;
+  visibility: hidden;
+  animation: fly-to-top 2s 2.5s infinite;
 }
 
 $colors: ('purple': index.$purple-balloon, 'orange': index.$orange-balloon, 'green': index.$green-balloon);
 $side: 'left'; //used to determine which side of balloons to work on
+
 @while $side != 'finished' {
+  $i: 1%; //Used to position balloons differently horizontally (resets for both sides (right & left side))
   @each $color-name, $color in $colors {
     //applies styling to each balloon
     .#{$color-name}-balloon-#{$side} {
       @extend .balloon;
       background-color: $color;
+      #{$side}: $i * -25;
+      $i: $i + 1;
     }
   }
 
