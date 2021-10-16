@@ -1,20 +1,15 @@
 @use 'index';
+@use 'mixins';
 @use 'animations';
 
 .birthday-txt-container {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0em auto;
+  @include mixins.center-horizontally(0em);
   visibility: hidden;
   animation: pop-up-text 1.5s 3s forwards;
 }
 
 .birthday-txt {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: .1em auto;
+  @include mixins.center-horizontally(.1em);
   text-align: center;
   color: index.$jsy-secondary;
   font-weight: 900;

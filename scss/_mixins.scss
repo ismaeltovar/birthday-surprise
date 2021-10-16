@@ -1,0 +1,8 @@
+@use 'index';
+
+@mixin center-horizontally($vertical-margin) {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: $vertical-margin auto;
+}

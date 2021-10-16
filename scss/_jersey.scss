@@ -1,17 +1,16 @@
 @use 'index';
+@use 'mixins';
 @use 'animations';
 @use 'sass:math';
 
 .jersey {
-  position: absolute;
+  @include mixins.center-horizontally(0em);
   top: 20%;
-  right: 0;
-  left: 0;
   background: index.$jsy-primary;
   width: 22em;
   height: 30em;
-  margin: .1em auto;
-  animation: swing-from-right 800ms forwards;
+  visibility: hidden;
+  animation: swing-from-right 800ms 2s forwards;
 }
 
 .yellow-stripe {
