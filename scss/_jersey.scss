@@ -3,6 +3,7 @@
 @use 'animations';
 @use 'sass:math';
 
+/* The backbone of the Jersey */
 .jersey {
   @include mixins.center-horizontally(0em);
   top: 20%;
@@ -11,86 +12,111 @@
   height: 30em;
   visibility: hidden;
   animation: swing-from-right 800ms 2s forwards;
+  z-index: 3;
 }
 
-.yellow-stripe {
-  content: "";
+.stripe-container {
   position: absolute;
-  width: 1.5em;
-  height: 4em;
-  box-shadow: inset .2em .2em 0em .1em index.$jsy-secondary;
-  background: index.$shadow-color;
-  border-radius: 2em;
+  left: 0;
+  right: 0;
+  width: inherit;
+  background: transparent;
+  overflow: hidden;
+  z-index: 4;
 }
 
-.white-stripe {
-  content: "";
+//used to add styling for stripes
+@mixin stripe($color, $border-radius, $width, $height) {
   position: absolute;
-  width: 1em;
-  height: 4em;
-  background: index.$jsy-tertiary;
+  width: $width;
+  height: $height;
+  z-index: 5;
+
+  @if ($color == 'yellow') {
+    background: index.$jsy-secondary;
+    border-radius: $border-radius;
+  }
+  @if ($color == 'white') {
+    @if ($border-radius != 0) {
+      background: index.$jsy-tertiary;
+      border-radius: $border-radius;
+    }
+    @else {
+      background: index.$jsy-tertiary;
+    }
+  }
 }
 
 /* For top stripes */
 .jsy-top-stripes {
-  width: inherit;
-  height: auto;
-  position: absolute;
+  @extend .stripe-container;
+  height: 33%;
   top: 0;
-  background: transparent;
-  overflow: hidden;
-}
 
-.jsy-top-stripes::before {
-  @extend .yellow-stripe;
-  top: 0em;
-  left: 0em;
-}
+  .top-left {
+    @include stripe('yellow', 30%, 40%, 100%);
+    transform: rotate(45deg);
+    top: -5%;
+    left: -10%;
+  }
 
-.jsy-top-stripes::after {
-  @extend .yellow-stripe;
-  top: 0em;
-  right: 0em;
+  .top-center.outermost {
+    @include stripe('yellow', 40%, 40%, 20%);
+    @include mixins.center-horizontally(0em);
+    top: 0;
+    z-index: 6; //outermost center stripe should be on top innermost center stripe
+  }
+
+  .top-center.innermost {
+    @include stripe('white', 40%, 40%, 20%);
+    @include mixins.center-horizontally(0em);
+    top: 0;
+  }
+
+  .top-right {
+    @include stripe('yellow', 30%, 40%, 100%);
+    transform: rotate(-45deg);
+    top: -5%;
+    right: -10%;
+  }
 }
 
 /* For bottom stripes */
 .jsy-btm-stripes {
-  position: absolute;
+  @extend .stripe-container;
+  height: 67%;
   bottom: 0em;
-  background: transparent;
-  overflow: hidden;
-}
 
-.jsy-btm-stripes::before {
-  @extend .white-stripe;
-  content: "";
-  background: index.$jsy-tertiary;
-  bottom: 0em;
-  left: .1em;
-}
+  .btm-left {
+    @include stripe('white', 0, 10%, 100%);
+    bottom: 0em;
+    left: 3%;
+  }
 
-.jsy-btm-stripes::after {
-  @extend .white-stripe;
-  bottom: 0em;
-  right: .1em;
+  .btm-right {
+    @include stripe('white', 0, 10%, 100%);
+    bottom: 0em;
+    right: 3%;
+  }
 }
 
 /* For text on jersey */
-.jsy-txt {
+@mixin jsy-txt($font-size) {
+  position: absolute;
+  @include mixins.center-horizontally(0);
   color: index.$jsy-secondary;
   text-align: center;
   font-family: 'Oswald', sans-serif;
   font-weight: 800;
+  font-size: $font-size;
 }
 
 .jsy-name {
-  @extend .jsy-txt;
-  position: relative;
-  display: block;
-  font-size: 4em;
+  @include jsy-txt(4em);
+  top: 20%;
 }
 
 .jsy-num {
-  @extend .jsy-txt;
-  font-size: 7em;
+  @include jsy-txt(7em);
+  top: 40%;
 }
