@@ -2,8 +2,10 @@
 @use 'mixins';
 @use 'animations';
 
-.balloon {
+@mixin balloon($color, $side, $position) {
   @include mixins.center-horizontally(0em);
+  background-color: $color;
+  #{$side}: $position;
   bottom: 0;
   border-radius: 50%;
   width: 17em;
@@ -20,9 +22,7 @@ $side: 'left'; //used to determine which side of balloons to work on
   @each $color-name, $color in $colors {
     //applies styling to each balloon
     .#{$color-name}-balloon-#{$side} {
-      @extend .balloon;
-      background-color: $color;
-      #{$side}: $i * -25;
+      @include balloon($color, $side, $i * -25);
       $i: $i + 1;
     }
   }
