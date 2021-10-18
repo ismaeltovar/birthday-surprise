@@ -11,6 +11,7 @@
   width: 17em;
   height: 20em;
   visibility: hidden;
+  overflow: hidden;
   animation: fly-to-top 2s 4.5s infinite;
 }
 
@@ -33,4 +34,10 @@ $side: 'left'; //used to determine which side of balloons to work on
   @else if $side == 'right' {
     $side: 'finished'; //used in order to finalize the loop
   }
+}
+
+#mahomes-gif {
+  @include mixins.center-element("h&v") ;
+  position: absolute !important;
+  height: 70%;
 }
