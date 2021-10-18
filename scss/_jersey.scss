@@ -5,7 +5,7 @@
 
 /* The backbone of the Jersey */
 .jersey {
-  @include mixins.center-horizontally(0em);
+  @include mixins.center-element("h");
   top: 20%;
   background: index.$jsy-primary;
   width: 22em;
@@ -62,14 +62,14 @@
 
   .top-center.outermost {
     @include stripe('yellow', 40%, 40%, 20%);
-    @include mixins.center-horizontally(0em);
+    @include mixins.center-element("h");
     top: 0;
     z-index: 6; //outermost center stripe should be on top innermost center stripe
   }
 
   .top-center.innermost {
     @include stripe('white', 40%, 40%, 20%);
-    @include mixins.center-horizontally(0em);
+    @include mixins.center-element("h");
     top: 0;
   }
 
@@ -87,6 +87,7 @@
   height: 67%;
   bottom: 0em;
 
+
   .btm-left {
     @include stripe('white', 0, 10%, 100%);
     bottom: 0em;
@@ -103,7 +104,7 @@
 /* For text on jersey */
 @mixin jsy-txt($font-size) {
   position: absolute;
-  @include mixins.center-horizontally(0);
+  @include mixins.center-element("h");
   color: index.$jsy-secondary;
   text-align: center;
   font-family: 'Oswald', sans-serif;

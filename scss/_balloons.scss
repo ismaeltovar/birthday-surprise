@@ -3,7 +3,7 @@
 @use 'animations';
 
 @mixin balloon($color, $side, $position) {
-  @include mixins.center-horizontally(0em);
+  @include mixins.center-element("h");
   background-color: $color;
   #{$side}: $position;
   bottom: 0;

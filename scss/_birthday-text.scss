@@ -3,13 +3,13 @@
 @use 'animations';
 
 .birthday-txt-container {
-  @include mixins.center-horizontally(0em);
+  @include mixins.center-element("h");
   visibility: hidden;
   animation: pop-up-text 1.5s 3s forwards;
 }
 
 .birthday-txt {
-  @include mixins.center-horizontally(.1em);
+  @include mixins.center-element("h");
   text-align: center;
   color: index.$jsy-secondary;
   font-weight: 900;
