@@ -15,7 +15,7 @@
 
 $percent: 0;
 @keyframes pop-up-text {
-  from {right: 0; bottom: 0; visibility: visible;} to { bottom: 30%; visibility: visible;}
+  from {bottom: 0; visibility: visible;} to { bottom: 20%; visibility: visible;}
   @while $percent <= 10 {
     #{$percent * 10%} {opacity: math.div($percent, 10); transform: scale(math.div($percent, 10)); }
     $percent: $percent + .5;

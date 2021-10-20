@@ -1,4 +1,5 @@
 @use 'index';
+@use 'animations';
 @use 'jersey';
 @use 'birthday-text';
 @use 'balloons';
@@ -18,7 +19,37 @@ body {
   background: index.$background-color;
 }
 
+.tenor-gif-embed {
+  pointer-events: none;
+}
+
 //Steph Curry gif embed
 #curry-gif {
   animation: hide-component 2s forwards;
+}
+
+#giannis-gif-left {
+  width: 30% !important;
+  height: 30%;
+  position: absolute !important;
+  left: -50%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  visibility: hidden;
+  animation: pop-up-text 1s 4.5s forwards;
+}
+
+#giannis-gif-right {
+  width: 30% !important;
+  height: 30%;
+  position: absolute !important;
+  right: -50%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  visibility: hidden;
+  animation: pop-up-text 1s 4.5s forwards;
 }
