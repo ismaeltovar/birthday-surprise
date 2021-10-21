@@ -5,11 +5,11 @@
 
 /* The backbone of the Jersey */
 .jersey {
-  @include mixins.center-element("h");
-  top: 20%;
+  @include mixins.center-element("h&v");
+  bottom: 20%;
   background: index.$jsy-primary;
-  width: 22em;
-  height: 30em;
+  width: 8em;
+  height: 13em;
   visibility: hidden;
   animation: swing-from-right 800ms 2s forwards;
   z-index: 3;
@@ -60,29 +60,29 @@
   z-index: 5;
 
   .top-left {
-    @include stripe('yellow', 1.5em, 70%, 100%);
+    @include stripe('yellow', .5em, 80%, 100%);
     transform: rotate(-90deg);
     top: -20%;
-    left: -35%;
+    left: -45%;
   }
 
   .top-center.outermost {
-    @include stripe('yellow', 2em, 40%, 20%);
-    @include mixins.center-element("h");
-    top: -25%;
-  }
-
-  .top-center.innermost {
-    @include stripe('white', 2em, 40%, 20%);
+    @include stripe('yellow', 1.2em, 40%, 20%);
     @include mixins.center-element("h");
     top: -35%;
   }
 
+  .top-center.innermost {
+    @include stripe('white', 1.2em, 40%, 20%);
+    @include mixins.center-element("h");
+    top: -45%;
+  }
+
   .top-right {
-    @include stripe('yellow', 1.5em, 70%, 100%);
+    @include stripe('yellow', .5em, 80%, 100%);
     transform: rotate(90deg);
     top: -20%;
-    right: -35%;
+    right: -45%;
   }
 }
 
@@ -94,13 +94,13 @@
   z-index: 4;
 
   .btm-left {
-    @include stripe('white', 0, 1.4em, 100%);
+    @include stripe('white', 0, .35em, 100%);
     bottom: 0em;
     left: 2%;
   }
 
   .btm-right {
-    @include stripe('white', 0, 1.4em, 100%);
+    @include stripe('white', 0, .35em, 100%);
     bottom: 0em;
     right: 2%;
   }
@@ -118,11 +118,11 @@
 }
 
 .jsy-name {
-  @include jsy-txt(3.5em);
+  @include jsy-txt(1.3em);
   top: 10%;
 }
 
 .jsy-num {
-  @include jsy-txt(9em);
+  @include jsy-txt(4em);
   top: 20%;
 }
