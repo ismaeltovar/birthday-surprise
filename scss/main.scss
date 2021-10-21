@@ -57,3 +57,13 @@ body {
   height: 50%;
   z-index: -1;
 }
+
+.browser-warning {
+  @include mixins.center-element("h&v");
+  width: 70%;
+  height: 70%;
+  background-color: index.$jsy-tertiary;
+  color: index.$shadow-color;
+  font-weight: bolder;
+  font-style: italic;
+}
