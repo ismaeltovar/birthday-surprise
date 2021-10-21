@@ -1,0 +1,494 @@
+/* Font import */
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap");
+/* Variables */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@keyframes hide-component {
+  from {
+    visibility: visible;
+  }
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes swing-from-right {
+  from {
+    right: -150%;
+    visibility: visible;
+  }
+  to {
+    right: 0;
+    visibility: visible;
+  }
+}
+@keyframes fly-to-top {
+  from {
+    bottom: -150%;
+    visibility: visible;
+  }
+  to {
+    bottom: 100%;
+    visibility: visible;
+  }
+}
+@keyframes pop-up-text {
+  from {
+    bottom: 0;
+    visibility: visible;
+  }
+  to {
+    bottom: 20%;
+    visibility: visible;
+  }
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  5% {
+    opacity: 0.05;
+    transform: scale(0.05);
+  }
+  10% {
+    opacity: 0.1;
+    transform: scale(0.1);
+  }
+  15% {
+    opacity: 0.15;
+    transform: scale(0.15);
+  }
+  20% {
+    opacity: 0.2;
+    transform: scale(0.2);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(0.25);
+  }
+  30% {
+    opacity: 0.3;
+    transform: scale(0.3);
+  }
+  35% {
+    opacity: 0.35;
+    transform: scale(0.35);
+  }
+  40% {
+    opacity: 0.4;
+    transform: scale(0.4);
+  }
+  45% {
+    opacity: 0.45;
+    transform: scale(0.45);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  55% {
+    opacity: 0.55;
+    transform: scale(0.55);
+  }
+  60% {
+    opacity: 0.6;
+    transform: scale(0.6);
+  }
+  65% {
+    opacity: 0.65;
+    transform: scale(0.65);
+  }
+  70% {
+    opacity: 0.7;
+    transform: scale(0.7);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.75);
+  }
+  80% {
+    opacity: 0.8;
+    transform: scale(0.8);
+  }
+  85% {
+    opacity: 0.85;
+    transform: scale(0.85);
+  }
+  90% {
+    opacity: 0.9;
+    transform: scale(0.9);
+  }
+  95% {
+    opacity: 0.95;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes text-highlight {
+  from {
+    color: #fac903;
+  }
+  to {
+    color: #183c88;
+  }
+}
+/* The backbone of the Jersey */
+.jersey {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  bottom: 20%;
+  background: #183c88;
+  width: 8em;
+  height: 13em;
+  visibility: hidden;
+  animation: swing-from-right 800ms 2s forwards;
+  z-index: 3;
+}
+
+.stripe-container, .jsy-btm-stripes, .jsy-top-stripes {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: inherit;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* For top stripes */
+.jsy-top-stripes {
+  height: 33%;
+  top: 0;
+  z-index: 5;
+}
+.jsy-top-stripes .top-left {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  border: 0.5em solid #fac903;
+  background: #3F71DD;
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  top: -20%;
+  left: -45%;
+}
+.jsy-top-stripes .top-center.outermost {
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  border: 1.2em solid #fac903;
+  background: #3F71DD;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -35%;
+}
+.jsy-top-stripes .top-center.innermost {
+  position: absolute;
+  width: 40%;
+  height: 20%;
+  border: 1.2em solid #e3e5f1;
+  background: #3F71DD;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: -45%;
+}
+.jsy-top-stripes .top-right {
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  border: 0.5em solid #fac903;
+  background: #3F71DD;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  top: -20%;
+  right: -45%;
+}
+
+/* For bottom stripes */
+.jsy-btm-stripes {
+  height: 67%;
+  bottom: 0em;
+  z-index: 4;
+}
+.jsy-btm-stripes .btm-left {
+  position: absolute;
+  width: 0.35em;
+  height: 100%;
+  background: #e3e5f1;
+  bottom: 0em;
+  left: 2%;
+}
+.jsy-btm-stripes .btm-right {
+  position: absolute;
+  width: 0.35em;
+  height: 100%;
+  background: #e3e5f1;
+  bottom: 0em;
+  right: 2%;
+}
+
+/* For text on jersey */
+.jsy-name {
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fac903;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 800;
+  font-size: 1.3em;
+  top: 10%;
+}
+
+.jsy-num {
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fac903;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-weight: 800;
+  font-size: 4em;
+  top: 20%;
+}
+
+.birthday-txt-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  visibility: hidden;
+  animation: pop-up-text 1.5s 3s forwards;
+}
+
+.birthday-txt {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: 10%;
+  text-align: center;
+  color: #fac903;
+  font-weight: 900;
+  font-size: 5em;
+  text-shadow: 0.05em 0.05em black;
+  font-family: "Roboto", sans-serif;
+  animation: text-highlight 1s 3.3s infinite;
+}
+
+.purple-balloon-left {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #631886;
+  left: -25%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+.orange-balloon-left {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #866318;
+  left: -50%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+.green-balloon-left {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #3B8618;
+  left: -75%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+.purple-balloon-right {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #631886;
+  right: -25%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+.orange-balloon-right {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #866318;
+  right: -50%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+.green-balloon-right {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #3B8618;
+  right: -75%;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 10em;
+  visibility: hidden;
+  overflow: hidden;
+  animation: fly-to-top 2s 4.5s infinite;
+}
+
+#mahomes-gif {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute !important;
+  height: 70%;
+}
+
+/* Partials import */
+html {
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+body {
+  background: #3F71DD;
+}
+
+.tenor-gif-embed {
+  pointer-events: none;
+}
+
+#curry-gif {
+  animation: hide-component 2s forwards;
+}
+
+#giannis-gif-left {
+  width: 30% !important;
+  height: 30%;
+  position: absolute !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  left: -50%;
+  visibility: hidden;
+  animation: pop-up-text 1s 4.5s forwards;
+}
+
+#giannis-gif-right {
+  width: 30% !important;
+  height: 30%;
+  position: absolute !important;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  right: -50%;
+  visibility: hidden;
+  animation: pop-up-text 1s 4.5s forwards;
+}
+
+#lebron-gif {
+  position: absolute !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  bottom: -10%;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
+}
+
+.browser-warning {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 70%;
+  height: 70%;
+  background-color: #e3e5f1;
+  color: black;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+/*# sourceMappingURL=main.css.map */
