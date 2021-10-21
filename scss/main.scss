@@ -33,11 +33,8 @@ body {
   width: 30% !important;
   height: 30%;
   position: absolute !important;
+  @include mixins.center-element("h&v");
   left: -50%;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   visibility: hidden;
   animation: pop-up-text 1s 4.5s forwards;
 }
@@ -50,4 +47,13 @@ body {
   right: -50%;
   visibility: hidden;
   animation: pop-up-text 1s 4.5s forwards;
+}
+
+#lebron-gif {
+  position: absolute !important;
+  @include mixins.center-element("h");
+  bottom: -10%;
+  width: 100%;
+  height: 50%;
+  z-index: -1;
 }
