@@ -1,4 +1,5 @@
 @use 'index';
+@use 'mixins';
 @use 'animations';
 @use 'jersey';
 @use 'birthday-text';
@@ -45,11 +46,8 @@ body {
   width: 30% !important;
   height: 30%;
   position: absolute !important;
+  @include mixins.center-element("h&v");
   right: -50%;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
   visibility: hidden;
   animation: pop-up-text 1s 4.5s forwards;
 }
