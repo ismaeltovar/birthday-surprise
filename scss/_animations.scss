@@ -13,15 +13,24 @@
   from {bottom: -150%; visibility: visible;} to {bottom: 100%; visibility: visible;}
 }
 
-$percent: 0;
 @keyframes pop-up-text {
+  $percentNum: 0;
   from {bottom: 0; visibility: visible;} to { bottom: 20%; visibility: visible;}
-  @while $percent <= 10 {
-    #{$percent * 10%} {opacity: math.div($percent, 10); transform: scale(math.div($percent, 10)); }
-    $percent: $percent + .5;
+  @while $percentNum <= 10 {
+    #{$percentNum * 10%} {opacity: math.div($percentNum, 10); transform: scale(math.div($percentNum, 10)); }
+    $percentNum: $percentNum + .5;
   }
 }
 
 @keyframes text-highlight {
   from {color: index.$jsy-secondary;} to {color: index.$jsy-primary;}
+}
+
+// Animation for better button scale animation
+@keyframes increasing-btn-scale {
+  $percentNum: 0;
+  @while $percentNum <= 10 {
+    #{$percentNum * 10%} {transform: scale(1 + ($percentNum * .008));}
+    $percentNum: $percentNum + 1;
+  }
 }
