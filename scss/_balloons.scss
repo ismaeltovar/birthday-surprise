@@ -2,17 +2,54 @@
 @use 'mixins';
 @use 'animations';
 
-@mixin balloon($color, $side, $position) {
+.balloon {
   @include mixins.center-element("h");
-  background-color: $color;
-  #{$side}: $position;
-  bottom: 0;
-  border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
+    bottom: 0;
+    border-radius: 50%;
+    width: 8em;
+    height: 16em;
+    visibility: hidden;
+    animation: fly-to-top 2.5s 4.5s infinite;
+    z-index: 6;
+}
+
+@mixin construct-balloon($color-name, $color, $side, $position) {
+  .balloon.#{$side}.#{$color-name} {
+    #{$side}: $position;
+
+    .#{$color-name}-balloon-top {
+      @include mixins.center-element("h");
+      top: 0;
+      border-radius: 50%;
+      background-color: $color;
+      width: 8em;
+      height: 10em;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 6;
+    }
+
+    .#{$color-name}-balloon-btm {
+      @include mixins.center-element("h&v");
+      top: 30%;
+      background-color: $color;
+      bottom: 10%;
+      width: 3em;
+      height: 1.5em;
+      z-index: 5;
+    }
+
+    .#{$color-name}-balloon-string {
+      @include mixins.center-element("h&v");
+      top: 50%;
+      background-color: index.$balloon-string-color;
+      width: .3em;
+      height: 6em;
+      z-index: 4;
+    }
+  }
 }
 
 $colors: ('purple': index.$purple-balloon, 'orange': index.$orange-balloon, 'green': index.$green-balloon);
@@ -22,10 +59,8 @@ $side: 'left'; //used to determine which side of balloons to work on
   $i: 1%; //Used to position balloons differently horizontally (resets for both sides (right & left side))
   @each $color-name, $color in $colors {
     //applies styling to each balloon
-    .#{$color-name}-balloon-#{$side} {
-      @include balloon($color, $side, $i * -25);
-      $i: $i + 1;
-    }
+    @include construct-balloon($color-name, $color, $side, $i * -25);
+    $i: $i + 1;
   }
 
   @if $side == 'left' {
@@ -37,7 +72,5 @@ $side: 'left'; //used to determine which side of balloons to work on
 }
 
 #mahomes-gif {
-  @include mixins.center-element("h&v") ;
-  position: absolute !important;
   height: 70%;
 }
