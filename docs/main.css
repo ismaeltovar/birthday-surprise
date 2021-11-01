@@ -1,6 +1,8 @@
 /* Font import */
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap");
+/* Bootstrap icons import (copyright info located in LICENSE.md in the docs directory) */
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 /* Variables */
 * {
   padding: 0;
@@ -16,6 +18,14 @@
     visibility: hidden;
   }
 }
+@keyframes display-component {
+  from {
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+  }
+}
 @keyframes swing-from-right {
   from {
     right: -150%;
@@ -28,12 +38,763 @@
 }
 @keyframes fly-to-top {
   from {
-    bottom: -150%;
     visibility: visible;
   }
   to {
-    bottom: 100%;
     visibility: visible;
+  }
+  0% {
+    bottom: -150%;
+  }
+  0.4% {
+    bottom: -149%;
+  }
+  0.8% {
+    bottom: -148%;
+  }
+  1.2% {
+    bottom: -147%;
+  }
+  1.6% {
+    bottom: -146%;
+  }
+  2% {
+    bottom: -145%;
+  }
+  2.4% {
+    bottom: -144%;
+  }
+  2.8% {
+    bottom: -143%;
+  }
+  3.2% {
+    bottom: -142%;
+  }
+  3.6% {
+    bottom: -141%;
+  }
+  4% {
+    bottom: -140%;
+  }
+  4.4% {
+    bottom: -139%;
+  }
+  4.8% {
+    bottom: -138%;
+  }
+  5.2% {
+    bottom: -137%;
+  }
+  5.6% {
+    bottom: -136%;
+  }
+  6% {
+    bottom: -135%;
+  }
+  6.4% {
+    bottom: -134%;
+  }
+  6.8% {
+    bottom: -133%;
+  }
+  7.2% {
+    bottom: -132%;
+  }
+  7.6% {
+    bottom: -131%;
+  }
+  8% {
+    bottom: -130%;
+  }
+  8.4% {
+    bottom: -129%;
+  }
+  8.8% {
+    bottom: -128%;
+  }
+  9.2% {
+    bottom: -127%;
+  }
+  9.6% {
+    bottom: -126%;
+  }
+  10% {
+    bottom: -125%;
+  }
+  10.4% {
+    bottom: -124%;
+  }
+  10.8% {
+    bottom: -123%;
+  }
+  11.2% {
+    bottom: -122%;
+  }
+  11.6% {
+    bottom: -121%;
+  }
+  12% {
+    bottom: -120%;
+  }
+  12.4% {
+    bottom: -119%;
+  }
+  12.8% {
+    bottom: -118%;
+  }
+  13.2% {
+    bottom: -117%;
+  }
+  13.6% {
+    bottom: -116%;
+  }
+  14% {
+    bottom: -115%;
+  }
+  14.4% {
+    bottom: -114%;
+  }
+  14.8% {
+    bottom: -113%;
+  }
+  15.2% {
+    bottom: -112%;
+  }
+  15.6% {
+    bottom: -111%;
+  }
+  16% {
+    bottom: -110%;
+  }
+  16.4% {
+    bottom: -109%;
+  }
+  16.8% {
+    bottom: -108%;
+  }
+  17.2% {
+    bottom: -107%;
+  }
+  17.6% {
+    bottom: -106%;
+  }
+  18% {
+    bottom: -105%;
+  }
+  18.4% {
+    bottom: -104%;
+  }
+  18.8% {
+    bottom: -103%;
+  }
+  19.2% {
+    bottom: -102%;
+  }
+  19.6% {
+    bottom: -101%;
+  }
+  20% {
+    bottom: -100%;
+  }
+  20.4% {
+    bottom: -99%;
+  }
+  20.8% {
+    bottom: -98%;
+  }
+  21.2% {
+    bottom: -97%;
+  }
+  21.6% {
+    bottom: -96%;
+  }
+  22% {
+    bottom: -95%;
+  }
+  22.4% {
+    bottom: -94%;
+  }
+  22.8% {
+    bottom: -93%;
+  }
+  23.2% {
+    bottom: -92%;
+  }
+  23.6% {
+    bottom: -91%;
+  }
+  24% {
+    bottom: -90%;
+  }
+  24.4% {
+    bottom: -89%;
+  }
+  24.8% {
+    bottom: -88%;
+  }
+  25.2% {
+    bottom: -87%;
+  }
+  25.6% {
+    bottom: -86%;
+  }
+  26% {
+    bottom: -85%;
+  }
+  26.4% {
+    bottom: -84%;
+  }
+  26.8% {
+    bottom: -83%;
+  }
+  27.2% {
+    bottom: -82%;
+  }
+  27.6% {
+    bottom: -81%;
+  }
+  28% {
+    bottom: -80%;
+  }
+  28.4% {
+    bottom: -79%;
+  }
+  28.8% {
+    bottom: -78%;
+  }
+  29.2% {
+    bottom: -77%;
+  }
+  29.6% {
+    bottom: -76%;
+  }
+  30% {
+    bottom: -75%;
+  }
+  30.4% {
+    bottom: -74%;
+  }
+  30.8% {
+    bottom: -73%;
+  }
+  31.2% {
+    bottom: -72%;
+  }
+  31.6% {
+    bottom: -71%;
+  }
+  32% {
+    bottom: -70%;
+  }
+  32.4% {
+    bottom: -69%;
+  }
+  32.8% {
+    bottom: -68%;
+  }
+  33.2% {
+    bottom: -67%;
+  }
+  33.6% {
+    bottom: -66%;
+  }
+  34% {
+    bottom: -65%;
+  }
+  34.4% {
+    bottom: -64%;
+  }
+  34.8% {
+    bottom: -63%;
+  }
+  35.2% {
+    bottom: -62%;
+  }
+  35.6% {
+    bottom: -61%;
+  }
+  36% {
+    bottom: -60%;
+  }
+  36.4% {
+    bottom: -59%;
+  }
+  36.8% {
+    bottom: -58%;
+  }
+  37.2% {
+    bottom: -57%;
+  }
+  37.6% {
+    bottom: -56%;
+  }
+  38% {
+    bottom: -55%;
+  }
+  38.4% {
+    bottom: -54%;
+  }
+  38.8% {
+    bottom: -53%;
+  }
+  39.2% {
+    bottom: -52%;
+  }
+  39.6% {
+    bottom: -51%;
+  }
+  40% {
+    bottom: -50%;
+  }
+  40.4% {
+    bottom: -49%;
+  }
+  40.8% {
+    bottom: -48%;
+  }
+  41.2% {
+    bottom: -47%;
+  }
+  41.6% {
+    bottom: -46%;
+  }
+  42% {
+    bottom: -45%;
+  }
+  42.4% {
+    bottom: -44%;
+  }
+  42.8% {
+    bottom: -43%;
+  }
+  43.2% {
+    bottom: -42%;
+  }
+  43.6% {
+    bottom: -41%;
+  }
+  44% {
+    bottom: -40%;
+  }
+  44.4% {
+    bottom: -39%;
+  }
+  44.8% {
+    bottom: -38%;
+  }
+  45.2% {
+    bottom: -37%;
+  }
+  45.6% {
+    bottom: -36%;
+  }
+  46% {
+    bottom: -35%;
+  }
+  46.4% {
+    bottom: -34%;
+  }
+  46.8% {
+    bottom: -33%;
+  }
+  47.2% {
+    bottom: -32%;
+  }
+  47.6% {
+    bottom: -31%;
+  }
+  48% {
+    bottom: -30%;
+  }
+  48.4% {
+    bottom: -29%;
+  }
+  48.8% {
+    bottom: -28%;
+  }
+  49.2% {
+    bottom: -27%;
+  }
+  49.6% {
+    bottom: -26%;
+  }
+  50% {
+    bottom: -25%;
+  }
+  50.4% {
+    bottom: -24%;
+  }
+  50.8% {
+    bottom: -23%;
+  }
+  51.2% {
+    bottom: -22%;
+  }
+  51.6% {
+    bottom: -21%;
+  }
+  52% {
+    bottom: -20%;
+  }
+  52.4% {
+    bottom: -19%;
+  }
+  52.8% {
+    bottom: -18%;
+  }
+  53.2% {
+    bottom: -17%;
+  }
+  53.6% {
+    bottom: -16%;
+  }
+  54% {
+    bottom: -15%;
+  }
+  54.4% {
+    bottom: -14%;
+  }
+  54.8% {
+    bottom: -13%;
+  }
+  55.2% {
+    bottom: -12%;
+  }
+  55.6% {
+    bottom: -11%;
+  }
+  56% {
+    bottom: -10%;
+  }
+  56.4% {
+    bottom: -9%;
+  }
+  56.8% {
+    bottom: -8%;
+  }
+  57.2% {
+    bottom: -7%;
+  }
+  57.6% {
+    bottom: -6%;
+  }
+  58% {
+    bottom: -5%;
+  }
+  58.4% {
+    bottom: -4%;
+  }
+  58.8% {
+    bottom: -3%;
+  }
+  59.2% {
+    bottom: -2%;
+  }
+  59.6% {
+    bottom: -1%;
+  }
+  60% {
+    bottom: 0%;
+  }
+  60.4% {
+    bottom: 1%;
+  }
+  60.8% {
+    bottom: 2%;
+  }
+  61.2% {
+    bottom: 3%;
+  }
+  61.6% {
+    bottom: 4%;
+  }
+  62% {
+    bottom: 5%;
+  }
+  62.4% {
+    bottom: 6%;
+  }
+  62.8% {
+    bottom: 7%;
+  }
+  63.2% {
+    bottom: 8%;
+  }
+  63.6% {
+    bottom: 9%;
+  }
+  64% {
+    bottom: 10%;
+  }
+  64.4% {
+    bottom: 11%;
+  }
+  64.8% {
+    bottom: 12%;
+  }
+  65.2% {
+    bottom: 13%;
+  }
+  65.6% {
+    bottom: 14%;
+  }
+  66% {
+    bottom: 15%;
+  }
+  66.4% {
+    bottom: 16%;
+  }
+  66.8% {
+    bottom: 17%;
+  }
+  67.2% {
+    bottom: 18%;
+  }
+  67.6% {
+    bottom: 19%;
+  }
+  68% {
+    bottom: 20%;
+  }
+  68.4% {
+    bottom: 21%;
+  }
+  68.8% {
+    bottom: 22%;
+  }
+  69.2% {
+    bottom: 23%;
+  }
+  69.6% {
+    bottom: 24%;
+  }
+  70% {
+    bottom: 25%;
+  }
+  70.4% {
+    bottom: 26%;
+  }
+  70.8% {
+    bottom: 27%;
+  }
+  71.2% {
+    bottom: 28%;
+  }
+  71.6% {
+    bottom: 29%;
+  }
+  72% {
+    bottom: 30%;
+  }
+  72.4% {
+    bottom: 31%;
+  }
+  72.8% {
+    bottom: 32%;
+  }
+  73.2% {
+    bottom: 33%;
+  }
+  73.6% {
+    bottom: 34%;
+  }
+  74% {
+    bottom: 35%;
+  }
+  74.4% {
+    bottom: 36%;
+  }
+  74.8% {
+    bottom: 37%;
+  }
+  75.2% {
+    bottom: 38%;
+  }
+  75.6% {
+    bottom: 39%;
+  }
+  76% {
+    bottom: 40%;
+  }
+  76.4% {
+    bottom: 41%;
+  }
+  76.8% {
+    bottom: 42%;
+  }
+  77.2% {
+    bottom: 43%;
+  }
+  77.6% {
+    bottom: 44%;
+  }
+  78% {
+    bottom: 45%;
+  }
+  78.4% {
+    bottom: 46%;
+  }
+  78.8% {
+    bottom: 47%;
+  }
+  79.2% {
+    bottom: 48%;
+  }
+  79.6% {
+    bottom: 49%;
+  }
+  80% {
+    bottom: 50%;
+  }
+  80.4% {
+    bottom: 51%;
+  }
+  80.8% {
+    bottom: 52%;
+  }
+  81.2% {
+    bottom: 53%;
+  }
+  81.6% {
+    bottom: 54%;
+  }
+  82% {
+    bottom: 55%;
+  }
+  82.4% {
+    bottom: 56%;
+  }
+  82.8% {
+    bottom: 57%;
+  }
+  83.2% {
+    bottom: 58%;
+  }
+  83.6% {
+    bottom: 59%;
+  }
+  84% {
+    bottom: 60%;
+  }
+  84.4% {
+    bottom: 61%;
+  }
+  84.8% {
+    bottom: 62%;
+  }
+  85.2% {
+    bottom: 63%;
+  }
+  85.6% {
+    bottom: 64%;
+  }
+  86% {
+    bottom: 65%;
+  }
+  86.4% {
+    bottom: 66%;
+  }
+  86.8% {
+    bottom: 67%;
+  }
+  87.2% {
+    bottom: 68%;
+  }
+  87.6% {
+    bottom: 69%;
+  }
+  88% {
+    bottom: 70%;
+  }
+  88.4% {
+    bottom: 71%;
+  }
+  88.8% {
+    bottom: 72%;
+  }
+  89.2% {
+    bottom: 73%;
+  }
+  89.6% {
+    bottom: 74%;
+  }
+  90% {
+    bottom: 75%;
+  }
+  90.4% {
+    bottom: 76%;
+  }
+  90.8% {
+    bottom: 77%;
+  }
+  91.2% {
+    bottom: 78%;
+  }
+  91.6% {
+    bottom: 79%;
+  }
+  92% {
+    bottom: 80%;
+  }
+  92.4% {
+    bottom: 81%;
+  }
+  92.8% {
+    bottom: 82%;
+  }
+  93.2% {
+    bottom: 83%;
+  }
+  93.6% {
+    bottom: 84%;
+  }
+  94% {
+    bottom: 85%;
+  }
+  94.4% {
+    bottom: 86%;
+  }
+  94.8% {
+    bottom: 87%;
+  }
+  95.2% {
+    bottom: 88%;
+  }
+  95.6% {
+    bottom: 89%;
+  }
+  96% {
+    bottom: 90%;
+  }
+  96.4% {
+    bottom: 91%;
+  }
+  96.8% {
+    bottom: 92%;
+  }
+  97.2% {
+    bottom: 93%;
+  }
+  97.6% {
+    bottom: 94%;
+  }
+  98% {
+    bottom: 95%;
+  }
+  98.4% {
+    bottom: 96%;
+  }
+  98.8% {
+    bottom: 97%;
+  }
+  99.2% {
+    bottom: 98%;
+  }
+  99.6% {
+    bottom: 99%;
+  }
+  100% {
+    bottom: 100%;
   }
 }
 @keyframes pop-up-text {
@@ -136,6 +897,41 @@
   }
   to {
     color: #183c88;
+  }
+}
+@keyframes increasing-btn-scale {
+  0% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.008);
+  }
+  20% {
+    transform: scale(1.016);
+  }
+  30% {
+    transform: scale(1.024);
+  }
+  40% {
+    transform: scale(1.032);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  60% {
+    transform: scale(1.048);
+  }
+  70% {
+    transform: scale(1.056);
+  }
+  80% {
+    transform: scale(1.064);
+  }
+  90% {
+    transform: scale(1.072);
+  }
+  100% {
+    transform: scale(1.08);
   }
 }
 /* The backbone of the Jersey */
@@ -296,125 +1092,318 @@
   color: #fac903;
   font-weight: 900;
   font-size: 5em;
-  text-shadow: 0.05em 0.05em black;
+  text-shadow: 0.05em 0.05em #000;
   font-family: "Roboto", sans-serif;
   animation: text-highlight 1s 3.3s infinite;
 }
 
-.purple-balloon-left {
+.balloon {
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: #631886;
+  bottom: 0;
+  border-radius: 50%;
+  width: 8em;
+  height: 16em;
+  visibility: hidden;
+  animation: fly-to-top 2.5s 4.5s infinite;
+  z-index: 6;
+}
+
+.balloon.left.purple {
   left: -25%;
-  bottom: 0;
-  border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
 }
-
-.orange-balloon-left {
+.balloon.left.purple .purple-balloon-top {
   position: absolute;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  background-color: #866318;
-  left: -50%;
-  bottom: 0;
+  top: 0;
   border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
-}
-
-.green-balloon-left {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #3B8618;
-  left: -75%;
-  bottom: 0;
-  border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
-}
-
-.purple-balloon-right {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
   background-color: #631886;
-  right: -25%;
-  bottom: 0;
-  border-radius: 50%;
   width: 8em;
   height: 10em;
-  visibility: hidden;
   overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
 }
-
-.orange-balloon-right {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #866318;
-  right: -50%;
-  bottom: 0;
-  border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
-}
-
-.green-balloon-right {
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #3B8618;
-  right: -75%;
-  bottom: 0;
-  border-radius: 50%;
-  width: 8em;
-  height: 10em;
-  visibility: hidden;
-  overflow: hidden;
-  animation: fly-to-top 2s 4.5s infinite;
-}
-
-#mahomes-gif {
+.balloon.left.purple .purple-balloon-btm {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   margin: auto;
-  position: absolute !important;
+  top: 30%;
+  background-color: #631886;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.left.purple .purple-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+.balloon.left.orange {
+  left: -50%;
+}
+.balloon.left.orange .orange-balloon-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  border-radius: 50%;
+  background-color: #866318;
+  width: 8em;
+  height: 10em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.balloon.left.orange .orange-balloon-btm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #866318;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.left.orange .orange-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+.balloon.left.green {
+  left: -75%;
+}
+.balloon.left.green .green-balloon-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  border-radius: 50%;
+  background-color: #3B8618;
+  width: 8em;
+  height: 10em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.balloon.left.green .green-balloon-btm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #3B8618;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.left.green .green-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+.balloon.right.purple {
+  right: -25%;
+}
+.balloon.right.purple .purple-balloon-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  border-radius: 50%;
+  background-color: #631886;
+  width: 8em;
+  height: 10em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.balloon.right.purple .purple-balloon-btm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #631886;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.right.purple .purple-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+.balloon.right.orange {
+  right: -50%;
+}
+.balloon.right.orange .orange-balloon-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  border-radius: 50%;
+  background-color: #866318;
+  width: 8em;
+  height: 10em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.balloon.right.orange .orange-balloon-btm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #866318;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.right.orange .orange-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+.balloon.right.green {
+  right: -75%;
+}
+.balloon.right.green .green-balloon-top {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  border-radius: 50%;
+  background-color: #3B8618;
+  width: 8em;
+  height: 10em;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 6;
+}
+.balloon.right.green .green-balloon-btm {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 30%;
+  background-color: #3B8618;
+  bottom: 10%;
+  width: 3em;
+  height: 1.5em;
+  z-index: 5;
+}
+.balloon.right.green .green-balloon-string {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 50%;
+  background-color: #7a7a7a;
+  width: 0.3em;
+  height: 6em;
+  z-index: 4;
+}
+
+#mahomes-gif {
   height: 70%;
 }
 
-/* Partials import */
 html {
   max-width: 100vw;
   max-height: 100vh;
@@ -422,7 +1411,7 @@ html {
 }
 
 body {
-  background: #3F71DD;
+  background: #3F71DD !important;
 }
 
 .tenor-gif-embed {
@@ -474,6 +1463,8 @@ body {
   width: 100%;
   height: 50%;
   z-index: -1;
+  visibility: hidden;
+  animation: display-component 1ms 2s forwards;
 }
 
 .browser-warning {
@@ -486,9 +1477,40 @@ body {
   width: 70%;
   height: 70%;
   background-color: #e3e5f1;
-  color: black;
+  color: #000;
   font-weight: bolder;
   font-style: italic;
+}
+
+.src-btn {
+  position: absolute !important;
+  right: 1% !important;
+  bottom: 1% !important;
+  width: 15%;
+  height: 4%;
+  background-color: #000;
+  color: #FFF;
+  border-radius: 2em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  align-content: space-around;
+  justify-content: center;
+}
+.src-btn:hover {
+  cursor: pointer;
+  animation: increasing-btn-scale 0.2s forwards;
+}
+.src-btn #github-icon {
+  font-size: 110%;
+  width: fit-content;
+  height: fit-content;
+}
+.src-btn .btn-txt {
+  width: fit-content;
+  height: fit-content;
+  font-size: 50%;
+  margin-left: 5%;
 }
 
 /*# sourceMappingURL=main.css.map */
