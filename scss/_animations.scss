@@ -5,6 +5,10 @@
   from {visibility: visible;} to {visibility: hidden;}
 }
 
+@keyframes display-component {
+  from {visibility: hidden;} to {visibility: visible;}
+}
+
 @keyframes swing-from-right {
   from {right: -150%; visibility: visible;} to {right: 0; visibility: visible;}
 }

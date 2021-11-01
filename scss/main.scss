@@ -9,7 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&family=Roboto&display=swap');
 
-/* Bootstrap icons import (copyright info located in LICENSE.md in this project's root directory) */
+/* Bootstrap icons import (copyright info located in LICENSE.md in the docs directory) */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 
 html {
@@ -58,6 +58,8 @@ body {
   width: 100%;
   height: 50%;
   z-index: -1;
+  visibility: hidden;
+  animation: display-component 1ms 2s forwards;
 }
 
 .browser-warning {
