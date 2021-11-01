@@ -10,7 +10,14 @@
 }
 
 @keyframes fly-to-top {
-  from {bottom: -150%; visibility: visible;} to {bottom: 100%; visibility: visible;}
+  from {visibility: visible;} to {visibility: visible;}
+  $percentNum: 0;
+  $startingPercent: -150%;
+  @while $percentNum <= 10 {
+    #{$percentNum * 10%} {bottom: $startingPercent;}
+    $startingPercent: $startingPercent + 1%;
+    $percentNum: $percentNum + .04;
+  }
 }
 
 @keyframes pop-up-text {
